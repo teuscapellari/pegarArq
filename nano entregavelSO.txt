@@ -33,6 +33,14 @@ sudo apt -get install update && sudo apt -get upgrade
 echo "Bem-Vindo"
 echo "Vamos iniciar a instalação do sistema BankSecure"
 echo "Vamos começar verificando a existência do Java na sua máquina"
+acho "Caso não exista uma versão do Java compatível, uma será instalada"
+echo "Deseja continuar? [s/n]"
+
+read get
+if [ \"$get"\ == \"s\" || \"$get"\ == \"S\" ];
+then
+
+#FAZER TUDO A BAIXO
 
 java -version #verifica versao atual do java
 
@@ -42,25 +50,36 @@ if [  $? = 0 ]; #se retorno for igual a 0
 
         else #se nao,
                 echo "Java não instalado" #print no terminal
-                echo "Gostaria de instalar o Java? [s/n]" #print no terminal
+                echo "Iniciando instalação " #print no terminal
 
-                read get #variavel que guarda resposta do usuário
-
-        if [ \"$get"\ == \"s\" || \"$get"\ == \"S\" ]; #se retorno for igual a s ou S
-
-                then #entao
                         sudo apt install openjdk-17-jre -y #executa instalacao do Java forcando o Yes
 
-        fi #fecha o 2º if
+echo "Baixando os arquivos necessários para execução"
+
+git clone 
+
+cd Listar_Processor.jar
+
+echo "Listando os processos do computador"
+Java -jar ListarInfo.jar
+
+echo "Listando informações do computador"
+Java -jar ListaInfo.jar
+
+echo "Deseja prosseguir para Listar informações com o Banco de Dados? [s/n]"
+
+read get
+if [ \"$get"\ == \"s\" || \"$get"\ == \"S\" ];
+then
+echo "Iniciando bla bla bla"
+cd comobd
+mysql -h localhost -u root -p <script-desenvolvimento.sql
+Java -jar ListaInfo.jar
+
+else
 
 fi #fecha o 1º if
 
-#sudo apt-get update -y
-#sudo apt-get install mlocate -y
+else
+echo "Para utilizar nossos serviços, é necessário atualizar ou instalar o Java"
 
-if [ -d /BankSecure/ ];
-        then
-                echo "Projeto não baixado"
-        else
-                echo "Projeto já baixado"
-fi
